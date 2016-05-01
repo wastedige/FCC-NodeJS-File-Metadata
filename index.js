@@ -16,9 +16,7 @@ app.get('/', function(request, response) {
 });
 
 app.post('/api/fileanalyse', upload.single('the-file'),  function(req, res, next) {
-  console.log({fileSize: JSON.stringify(req.file.size)} )
-//  res.status(200).send({success: true}, {fileSize: JSON.stringify(req.file.size)} )
-  //res.json({success: true});
+
   res.end( JSON.stringify ( { fileSize: req.file.size } ) )
 
 })
